@@ -1,0 +1,487 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white; /* Make navigation bar white */
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px; /* Slightly bigger logo */
+    width: auto; /* Maintain aspect ratio */
+    padding-top: 0.2rem; /* Add padding on top of the logo */
+}
+
+nav {
+    background-color: transparent; /* Ensure the navigation bar is transparent */
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center; /* Center the navigation list */
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center navigation items */
+    position: absolute;
+    padding-left: 4rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+nav ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.5rem;
+    width: 1px;
+    background-color: #d9534f; /* Theme color for separator */
+}
+
+nav ul li a {
+    color: #333; /* Dark text color for navigation links */
+    text-decoration: none;
+    padding: 2rem 1rem; /* Add padding for blocky effect */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Dim blocky background on hover */
+    color: #d9534f; /* Theme color on hover */
+}
+
+.nav-buttons {
+    display: none; /* Hide the existing nav buttons */
+}
+
+.login-btn {
+    background-color: #d9534f; /* Theme color for login button */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid #d9534f; /* Theme border for login button */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.login-btn:hover {
+    opacity: 0.8; /* Slightly dim the button on hover */
+}
+
+.hero {
+    background: url('/images/hero.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 2rem;
+}
+
+.hero-logo {
+    height: 100px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.hero hr {
+    width: 30%; /* Smaller horizontal line */
+    border: 1px solid white; /* White color */
+    margin: 1rem 0;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* New font for hotel vibe */
+}
+
+.info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.info-content {
+    max-width: 600px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.info-row {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-item {
+    flex: 1;
+    margin: 0 1rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    padding: 1rem;
+    border-radius: 8px; /* Slightly rounded edges */
+    opacity: 0.9; /* Make the wrappers opaque */
+}
+
+.info-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images maintain aspect ratio and cover the area */
+    border-radius: 8px;
+}
+
+.info-item h4 {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: white; /* Ensure text is readable on dark background */
+}
+
+.info-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: white; /* Ensure text is readable on dark background */
+}
+
+.info-item .price {
+    font-size: 1.25rem;
+    color: #d9534f; /* Price color */
+    margin: 0.5rem 0;
+}
+
+.info-item .btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.see-more-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.see-more-btn {
+    background-color: #d9534f; /* Theme color for button */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid #d9534f; /* Theme border for button */
+}
+
+.see-more-btn:hover {
+    opacity: 0.8; /* Slightly dim the button on hover */
+}
+
+.quote-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.quote-section p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.quote-section .author {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.slideshow-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 15s infinite;
+}
+
+.slideshow::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmer overlay */
+    z-index: 1;
+}
+
+.slideshow-content {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.slideshow-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.slideshow-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.slideshow-content .btn {
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.slideshow-content .btn:hover {
+    background-color: white; /* Change background color on hover */
+    color: #d9534f; /* Change text color on hover */
+}
+
+.slideshow-content .info {
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: transparent; /* Transparent background */
+    padding: 0.5rem;
+}
+
+@keyframes slideShow {
+    0% { background-image: url('/images/slideshow/slide1.jpg'); }
+    33% { background-image: url('/images/slideshow/slide2.jpg'); }
+    66% { background-image: url('/images/slideshow/slide3.jpg'); }
+    100% { background-image: url('/images/slideshow/slide1.jpg'); }
+}
+
+.hotel-story-section {
+    background-color: #d9534f; /* Apply theme color to background */
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Apply thinner font */
+}
+
+.hotel-story-section h2 {
+    font-size: 2.5rem;
+    color: white; /* Make title text white */
+    margin-bottom: 1rem;
+}
+
+.hotel-story-section p {
+    font-size: 1.25rem;
+    color: white; /* Make description text white */
+    margin-bottom: 2rem;
+    max-width: 600px; /* Center the description text more closely */
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300; /* Make description text thinner */
+}
+
+.hotel-story-section .btn {
+    background-color: transparent;
+    color: white; /* Make button text white */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: 2px solid white; /* Make button border white */
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    margin: 1rem;
+}
+
+.footer-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.social-media a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+.rooms-links p {
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.rooms-links p:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #ccc;
+}
+
+.gallery-section {
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    position: relative;
+    width: 30%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 8px; /* Slightly rounded edges */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images maintain aspect ratio and cover the area */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.gallery-item:hover img {
+    opacity: 0.7; /* Dim the image on hover */
+}
+
+.gallery-item .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for text */
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.gallery-item:hover .info {
+    opacity: 1; /* Show the text on hover */
+}
+
+.location-section {
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.location-info h2 {
+    font-size: 2.5rem;
+    color: #d9534f; /* Theme color for title */
+    margin-bottom: 1rem;
+}
+
+.location-info p {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.location-divider {
+    width: 1px;
+    height: 100%;
+    background-color: #d9534f; /* Theme color for divider */
+    margin: 0 2rem;
+}
+
+.location-map {
+    flex: 1;
+    height: 300px;
+    background-color: #ddd; /* Placeholder background color for map */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Slightly rounded edges */
+}

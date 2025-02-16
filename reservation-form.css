@@ -1,0 +1,338 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    padding-top: 0.2rem;
+}
+
+nav {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding-left: 4rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+nav ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.5rem;
+    width: 1px;
+    background-color: #d9534f;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 2rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #d9534f;
+}
+
+.login-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid #d9534f;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.login-btn:hover {
+    opacity: 0.8;
+}
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    margin: 1rem;
+}
+
+.footer-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.social-media a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+.rooms-links p {
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.rooms-links p:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #ccc;
+}
+
+.subheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    margin-bottom: 2rem; /* Add margin to separate from footer */
+}
+
+.subheader img {
+    max-width: 100%;
+    height: 20%; /* Revert the image height */
+    border-radius: 8px;
+    filter: brightness(70%);
+}
+
+.subheader .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to dim the image */
+    border-radius: 8px;
+}
+
+.subheader .info-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for text */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.subheader .info-wrapper h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.subheader .info-wrapper p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.reservation-panel {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin-bottom: 2rem;
+}
+
+.reservation-panel form {
+    display: flex;
+    flex-direction: row; /* Display form fields in a row */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Add space between form fields */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group label {
+    margin: 0.5rem 0;
+}
+
+.form-group input {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.reservation-panel .btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid #d9534f;
+    margin-top: 1rem;
+}
+
+.reservation-panel .btn:hover {
+    opacity: 0.8;
+}
+
+.room-wrapper {
+    display: flex;
+    flex-direction: row; /* Make the insides of the wrapper row style */
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.room-wrapper h2 {
+    margin-top: 0;
+    color: #d9534f; /* Theme color for room titles */
+}
+
+.room-wrapper p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+room-overlay p {
+    margin: 0.5rem 0 0;
+    color: #fff;
+}
+
+.room img {
+    height: 100vh; /* Make the room image 100vh */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: brightness(70%); /* Make the image dimmer */
+}
+
+.room-image {
+    flex: 1;
+    max-width: 30%;
+    margin-right: 1rem;
+}
+
+.room-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    filter: brightness(70%); /* Make the image dimmer */
+}
+
+.room-details {
+    flex: 2;
+    padding: 1rem;
+}
+
+.room-details h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #d9534f; /* Theme color for room titles */
+}
+
+.room-details p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.room-info {
+    flex: 1;
+    text-align: center;
+}
+
+.room-info p {
+    margin: 0.5rem 0;
+    padding-top: 2rem;
+    font-weight: bold;
+}
+
+.book-now {
+    background-color: #d9534f; /* Theme color for book now button */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid #d9534f; /* Theme border for book now button */
+    display: inline-block;
+    margin-top: 1rem;
+    width: 100px; /* Smaller width */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-now:hover {
+    opacity: 0.8; /* Slightly dim the button on hover */
+}
+
+.rooms h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #d9534f; /* Theme color for the heading */
+}
